@@ -3,7 +3,7 @@
     <ProfileImage :image="tweet.user.image" />
     <div className="body">
       <div className="top">
-        <User :user="tweet.user" />
+        <User :userData="tweet.user" />
         <Timestamp :timestamp="tweet.timestamp" />
       </div>
       <Message :message="tweet.message" />
