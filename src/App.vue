@@ -109,6 +109,7 @@ body {
   display: flex;
   font-size: 1.1rem;
   line-height: 18px;
+  margin: 2rem auto;
 }
 
 .body {
