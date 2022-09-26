@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="(item, index) in tweets" :key="index" :tweet="item"/>
   </div>
 </template>
 
