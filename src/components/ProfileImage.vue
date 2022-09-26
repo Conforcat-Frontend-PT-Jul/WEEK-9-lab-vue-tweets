@@ -1,10 +1,12 @@
+<script>
+  export default {
+      props: {
+          image: String
+      }
+  }
 
-
+  </script>
 
 <template>
-    <img
-    src="https://i.imgur.com/b0EdHVV.jpg" 
-    className="profile"
-    alt="profile"
-  />
+  <img :src="image" className="profile" alt="profile"/>
 </template>

@@ -1,49 +1,32 @@
 <script>
 import ProfileImage from './ProfileImage.vue';
+import User from './User.vue';
+import Timestamp from './Timestamp.vue';
+import Message from './Message.vue';
+import Actions from './Actions.vue';
 
-
-  export default {
-    props: {
-        tweet: Array,
-    },
-    computed: {
-        img() {
-            return this.tweet[0].user.image;
-        }
-    },
-    components: { ProfileImage }
+export default {
+  name: 'Tweet',
+  props: {
+    user: Object,
+    timestamp: String,
+    message: String
+  },
+  components: { ProfileImage, User, Timestamp, Message, Actions }
 }
-
-
-
-  </script>
+</script>
 
 
 <template>
   <div className="tweet">
-    <ProfileImage image="user.image" />
-
+    <ProfileImage :image="user.image" />
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{ tweet[0].user.name }}</span>
-          <span className="handle">{{ tweet[0].user.handle }}</span>
-        </span>
-
-        <span className="timestamp">{{ tweet[0].timestamp }}</span>
-      </div>
-
-      <p className="message">
-        {{ tweet[0].message }}
-      </p>
-
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <User :userData="user"/>
+      <Timestamp :time="timestamp"/>
+    </div>
+      <Message :message="message" />
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>

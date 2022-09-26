@@ -1,16 +1,17 @@
 <template>
   <div class="app">
-    <Tweet :tweet="tweets" />
+    <Tweet 
+      v-for="tweet in tweets" 
+      :key="tweet.timestamp"
+      :user="tweet.user"
+      :timestamp="tweet.timestamp"
+      :message="tweet.message"  
+    />
   </div>
 </template>
 
 <script>
-
-// console.log(props.tweetName)
-
 import Tweet from './components/Tweet.vue';
-
-//  console.log(this.tweetName)
 
 export default {
     data: () => ({
