@@ -12,7 +12,11 @@ const props = defineProps({
 
 <template>
   <div className="tweet">
-    <ProfileImage :image="tweet.user.image" :name="tweet.user.name" />
+    <ProfileImage
+      :image="tweet.user.image"
+      :name="tweet.user.name"
+      :alt="tweet.user.name"
+    />
     <div className="body">
       <div className="top">
         <User :name="tweet.user.name" :handle="tweet.user.handle" />
