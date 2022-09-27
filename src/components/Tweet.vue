@@ -12,15 +12,13 @@ const props = defineProps({
 
 <template>
   <div className="tweet">
-    <ProfileImage :image="tweet[0].user.image" :name="tweet[0].user.name" />
-
+    <ProfileImage :image="tweet.user.image" :name="tweet.user.name" />
     <div className="body">
       <div className="top">
-        <User :name="tweet[0].user.name" :handle="tweet[0].user.handle" />
-        <Timestamp :timestamp="tweet[0].timestamp" />
+        <User :name="tweet.user.name" :handle="tweet.user.handle" />
+        <Timestamp :timestamp="tweet.timestamp" />
       </div>
-
-      <Message :message="tweet[0].message" />
+      <Message :message="tweet.message" />
       <Actions />
     </div>
 
@@ -33,23 +31,3 @@ a {
   color: #42b983;
 }
 </style>
-
-<!-- <img :src="tweet[0].user.image" className="profile" alt="profile" /> -->
-
-<!-- <span className="user">
-  <span className="name">{{ tweet[0].user.name }}</span>
-  <span className="handle">{{ tweet[0].user.handle }}</span>
-</span> -->
-
-<!-- <span className="timestamp">{{ tweet[0].timestamp }}</span> -->
-
-<!-- <p className="message">
-  {{ tweet[0].message }}
-</p> -->
-
-<!-- <div className="actions">
-  <i class="far fa-comment"></i>
-  <i class="fas fa-retweet"></i>
-  <i class="far fa-heart"></i>
-  <i class="fas fa-share"></i>
-</div> -->
