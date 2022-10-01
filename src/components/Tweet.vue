@@ -1,13 +1,13 @@
 <template>
   <div className="tweet">
-    <ProfileImage :image="tweet[0].user.image" />
+    <ProfileImage :image="tweet.user.image" />
     <div className="body">
       <div className="top">
-        <User :userData="tweet[0].user" />
-        <Timestamp :timeStamp="tweet[0].timestamp" />
+        <User :userData="tweet.user" />
+        <Timestamp :timeStamp="tweet.timestamp" />
       </div>
 
-      <Message :message="tweet[0].message"/>
+      <Message :message="tweet.message"/>
       <Actions />
     </div>
     <i class="fas fa-ellipsis-h"></i>
