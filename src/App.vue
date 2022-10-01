@@ -1,6 +1,10 @@
 <template>
   <div class="app">
-    <Tweet />
+   
+    <Tweet v-for="tweet in tweets" :tweet="tweet" :key="tweet.user"/>
+
+
+
   </div>
 </template>
 
@@ -9,7 +13,8 @@
 import Tweet from './components/Tweet.vue';
 
 export default {
-    data: () => ({
+    data: () =>{
+      return {
         tweets: [
             {
                 user: {
@@ -17,6 +22,7 @@ export default {
                     image: "https://i.imgur.com/b0EdHVV.jpg",
                     handle: "dog_feelings",
                 },
+                
                 timestamp: "1h ago",
                 message: "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
             },
@@ -38,8 +44,9 @@ export default {
                 timestamp: "3h ago",
                 message: "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
             },
-        ]
-    }),
+        ],
+        
+    }},
     components: { Tweet }
 }
 </script>
@@ -102,11 +109,12 @@ export default {
     min-width: 480px;
     max-width: 640px;
     min-height: 80px;
-    padding: 10px;
+    padding: 17px;
     border: 1px solid #ccc;
     display: flex;
     font-size: 1.1rem;
     line-height: 18px;
+    margin-top:12px;
   }
 
   .body {
