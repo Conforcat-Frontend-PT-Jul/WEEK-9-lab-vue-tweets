@@ -6,5 +6,5 @@
     });
 </script>
 <template>
-    <img :src="image" alt="profile" class="profile" />
+    <img :src="image" alt="profile" class="profile" /> 
 </template>
