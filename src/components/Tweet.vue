@@ -1,3 +1,8 @@
+<script setup>
+  const props = defineProps ({
+    tweet: Object
+  });
+</script>
 <template>
   <div className="tweet">
     <img
@@ -9,7 +14,7 @@
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">Ironhack</span>
+          <span className="name">{{tweet[0].user.name}}</span>
           <span className="handle">@ironhack</span>
         </span>
 
@@ -17,8 +22,7 @@
       </div>
 
       <p className="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+        {{tweet[0].message}}
       </p>
 
       <div className="actions">
